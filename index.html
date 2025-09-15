@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo & Media Links</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #dab563;
+            box-shadow: 0 0 30px rgba(218, 181, 99, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(218, 181, 99, 0.5);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #dab563;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #cccccc;
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+
+        .links-section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            color: #dab563;
+            margin-bottom: 25px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .link-item {
+            background: linear-gradient(135deg, rgba(218, 181, 99, 0.1), rgba(218, 181, 99, 0.05));
+            border: 1px solid rgba(218, 181, 99, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-item:hover {
+            transform: translateY(-5px);
+            border-color: #dab563;
+            box-shadow: 0 10px 30px rgba(218, 181, 99, 0.2);
+            background: linear-gradient(135deg, rgba(218, 181, 99, 0.15), rgba(218, 181, 99, 0.08));
+        }
+
+        .link-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(218, 181, 99, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .link-item:hover::before {
+            left: 100%;
+        }
+
+        .link-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .link-description {
+            font-size: 0.9rem;
+            color: #cccccc;
+            opacity: 0.8;
+        }
+
+        .coming-soon {
+            background: linear-gradient(135deg, rgba(128, 128, 128, 0.1), rgba(128, 128, 128, 0.05));
+            border: 1px solid rgba(128, 128, 128, 0.2);
+            cursor: default;
+        }
+
+        .coming-soon:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .coming-soon .link-title {
+            color: #888888;
+        }
+
+        .social-section {
+            border-top: 1px solid rgba(218, 181, 99, 0.2);
+            padding-top: 40px;
+        }
+
+        .instagram-btn {
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            border: none;
+            border-radius: 50px;
+            padding: 15px 30px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .instagram-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(131, 58, 180, 0.4);
+        }
+
+        .instagram-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .instagram-btn:hover::before {
+            left: 100%;
+        }
+
+        .social-description {
+            font-size: 0.9rem;
+            color: #cccccc;
+            margin-bottom: 25px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .logo {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://sendwithses-855401425151-1707894036997510955-us-east-1.s3.amazonaws.com/opensource/1757962047081718759.png" alt="Logo" onerror="this.style.display='none'">
+        </div>
+        
+        <h1>Mallus in Ingolstadt</h1>
+        <p class="subtitle">Links here are updated often.</p>
+        
+        <div class="links-section">
+            <h2 class="section-title">Our Links</h2>
+            <div id="media-links">
+                <!-- Links will be populated by JavaScript -->
+            </div>
+        </div>
+        
+        <div class="social-section">
+            <h2 class="section-title">Follow Us</h2>
+            <p class="social-description">Know our next events early</p>
+            <a href="#" class="instagram-btn" id="instagram-link">
+                📸 Follow us on Instagram
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // JSON data structure for links - easily extensible
+        const mediaLinks = [
+            {
+                title: "Media Drive 1 - InOnam 2025",
+                description: "Our latest media collection - valid until 10.10.2025",
+                url: "https://drive.google.com/drive/folders/1DmPqVmwnkmaMT6miMUgODLIienrMIjJ4",
+                available: true
+            },
+            {
+                title: "Share more? - Contact us via email!",
+                description: "Do you have photos/videos that you would like to share?",
+                url: "https://drive.google.com/drive/folders/1DmPqVmwnkmaMT6miMUgODLIienrMIjJ4",
+                available: false
+            },
+        ];
+
+        // Social media links
+        const socialLinks = {
+            instagram: "https://www.instagram.com/mallus_in_ingolstadt" // Replace with your actual Instagram URL
+        };
+
+        // Function to render media links
+        function renderMediaLinks() {
+            const container = document.getElementById('media-links');
+            container.innerHTML = '';
+
+            mediaLinks.forEach(link => {
+                const linkElement = document.createElement('div');
+                linkElement.className = `link-item ${!link.available ? 'coming-soon' : ''}`;
+                
+                linkElement.innerHTML = `
+                    <div class="link-title">${link.title}</div>
+                    <div class="link-description">${link.available ? link.description : link.description + ""}</div>
+                `;
+
+                if (link.available && link.url !== '#') {
+                    linkElement.addEventListener('click', () => {
+                        window.open(link.url, '_blank');
+                    });
+                    linkElement.style.cursor = 'pointer';
+                } else {
+                    linkElement.style.cursor = 'default';
+                }
+
+                container.appendChild(linkElement);
+            });
+        }
+
+        // Function to set social media links
+        function setSocialLinks() {
+            const instagramBtn = document.getElementById('instagram-link');
+            if (socialLinks.instagram !== '#') {
+                instagramBtn.href = socialLinks.instagram;
+            } else {
+                instagramBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    alert('Instagram link coming soon!');
+                });
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            renderMediaLinks();
+            setSocialLinks();
+        });
+
+        // Example function to add new links (for future use)
+        function addMediaLink(title, description, url, available = true) {
+            mediaLinks.push({
+                title: title,
+                description: description,
+                url: url,
+                available: available
+            });
+            renderMediaLinks();
+        }
+
+        // Example function to update Instagram link
+        function updateInstagramLink(url) {
+            socialLinks.instagram = url;
+            setSocialLinks();
+        }
+    </script>
+</body>
+</html>
